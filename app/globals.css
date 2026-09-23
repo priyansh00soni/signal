@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Font stacks fall back gracefully since Untitled Serif / ABC Diatype Mono
+  are licensed faces (per the Monad spec) that likely aren't installed here.
+  Georgia and JetBrains Mono / system mono stand in cleanly.
+*/
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background-color: #f6f3f1;
+  color: #242424;
+}
+
+* {
+  border-color: #cecac8;
+}
+
+/* Respect reduced-motion preferences for the fade-in and pulse animations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-status-pulse {
+    animation: none !important;
+  }
+}
