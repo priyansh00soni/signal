@@ -1,4 +1,4 @@
-# Endpoint Health Monitoring — Frontend
+# Endpoint Health Monitoring - Frontend
 
 A small dashboard that polls a backend every 10 seconds and shows which
 registered machines are online vs offline.
@@ -16,16 +16,16 @@ Open http://localhost:3000.
 
 ## How it works
 
-- `app/page.tsx` — the dashboard. Fetches `GET /api/v1/machines` on load,
+- `app/page.tsx` - the dashboard. Fetches `GET /api/v1/machines` on load,
   then every 10s via `setInterval` inside `useEffect`. Handles loading
   (skeleton, first load only), error (inline banner, keeps polling in the
   background so it recovers on its own), and empty (`No machines yet`)
   states explicitly.
-- `components/MachineCard.tsx` — one machine's card: name, a pill status
+- `components/MachineCard.tsx` - one machine's card: name, a pill status
   tag with a colored + pulsing dot (online) or a plain dot (offline), and
   a "last seen" relative timestamp that ticks up locally between polls.
-- `lib/formatRelativeTime.ts` — tiny pure function, no date library.
-- `lib/types.ts` — `Machine` / `MachinesResponse` types matching the
+- `lib/formatRelativeTime.ts` - tiny pure function, no date library.
+- `lib/types.ts` - `Machine` / `MachinesResponse` types matching the
   backend's response shape.
 
 ## Design system
@@ -39,5 +39,5 @@ and pill-shaped tags/buttons. Tokens live in `tailwind.config.ts`.
 
 If you have the actual Untitled Serif / ABC Diatype Mono font files,
 drop them in `public/fonts/` and add `@font-face` rules to
-`app/globals.css` — the Tailwind font stacks already reference them by
+`app/globals.css` - the Tailwind font stacks already reference them by
 name first, so they'll pick up automatically.
