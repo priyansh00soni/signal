@@ -1,18 +1,9 @@
-// Plain manual check, no schema library. Returns field-level error
-// messages; empty array means the body is valid.
-export const validateHeartbeatBody = (body: unknown): string[] => {
-  const errors: string[] = []
+export const validateHeartbeatBody = (body: any): string[] => {
+  const name = body?.machineName;
 
-  if (typeof body !== 'object' || body === null || !('machineName' in body)) {
-    errors.push('machineName is required')
-    return errors
+  if (typeof name !== 'string' || name.trim().length === 0) {
+    return ['machineName must be a non-empty string'];
   }
 
-  const { machineName } = body as { machineName: unknown }
-
-  if (typeof machineName !== 'string' || machineName.trim().length === 0) {
-    errors.push('machineName must be a non-empty string')
-  }
-
-  return errors
+  return [];
 }
