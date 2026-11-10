@@ -4,7 +4,7 @@ A full-stack application that monitors the health of distributed machines/server
 
 ## The Stack
 
-- **Frontend:** Next.js (React), Tailwind CSS
+- **Frontend:** Next.js (React), Tailwind CSS 
 - **Backend:** Node.js, Express.js
 - **Database:** PostgreSQL (via Prisma ORM)
 - **Language:** TypeScript across the entire stack
